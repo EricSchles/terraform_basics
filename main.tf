@@ -11,7 +11,7 @@ provider "docker" {}
 
 # https://medium.com/swlh/setup-and-run-web-app-on-terraform-using-docker-c8e045da8860
 
-resource "docker_container" "nginx" {
+resource "docker_container" "flask" {
   image = "hello_world:develop"
   name  = "tutorial"
   ports {

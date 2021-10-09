@@ -1,4 +1,7 @@
-FROM nginx:mainline-alpine
-RUN rm /etc/nginx/conf.d/*
-ADD hello.conf /etc/nginx/conf.d/
-ADD index.html /usr/share/nginx/html/
+FROM python:3.6
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 8000
+ENTRYPOINT ["python"]
+CMD ["app.py"]
